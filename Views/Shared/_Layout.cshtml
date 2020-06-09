@@ -28,25 +28,25 @@
     -->
             <div class="sidebar-wrapper">
                 <div class="logo">
-                    <a href="http://www.creative-tim.com" class="simple-text">
+                    <a href="#" class="simple-text">
                         Creative Tim
                     </a>
                 </div>
                 <ul class="nav">
                     <li class="nav-item active">
-                        <a class="nav-link" onClick="location.href='../Views/Home/Index.cshtml'">
+                        <a class="nav-link" onclick="window.location.replace("http://localhost:5000/home/index")">
                             <i class="nc-icon nc-chart-pie-35"></i>
                             <p>Painel de Controle</p>
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="./user.html">
+                        <a class="nav-link" onclick="window.location.href="http://localhost:5000/user/index"">
                             <i class="nc-icon nc-circle-09"></i>
                             <p>Perfil do Usuário</p>
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="./notifications.html">
+                        <a class="nav-link" onclick="window.location.href="http://localhost:5000/notifications/index"">
                             <i class="nc-icon nc-bell-55"></i>
                             <p>Notificações</p>
                         </a>
@@ -66,12 +66,6 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-end" id="navigation">
                         <ul class="nav navbar-nav mr-auto">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link" data-toggle="dropdown">
-                                    <i class="nc-icon nc-palette"></i>
-                                    <span class="d-lg-none">Dashboard</span>
-                                </a>
-                            </li>
                             <li class="dropdown nav-item">
                                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                                     <i class="nc-icon nc-planet"></i>
@@ -85,12 +79,6 @@
                                     <a class="dropdown-item" href="#">Notification 4</a>
                                     <a class="dropdown-item" href="#">Another notification</a>
                                 </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="nc-icon nc-zoom-split"></i>
-                                    <span class="d-lg-block">&nbsp;Search</span>
-                                </a>
                             </li>
                         </ul>
                         <ul class="navbar-nav ml-auto">

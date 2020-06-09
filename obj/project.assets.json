@@ -8,19 +8,23 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\felip\\.nuget\\packages\\": {}
+    "C:\\Users\\felipe.bastos\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\felip\\Documents\\git\\Projeto-cti\\Projeto-cti.csproj",
+      "projectUniqueName": "C:\\Users\\felipe.bastos\\Documents\\git\\Projeto-cti\\Projeto-cti.csproj",
       "projectName": "Projeto-cti",
-      "projectPath": "C:\\Users\\felip\\Documents\\git\\Projeto-cti\\Projeto-cti.csproj",
-      "packagesPath": "C:\\Users\\felip\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\felip\\Documents\\git\\Projeto-cti\\obj\\",
+      "projectPath": "C:\\Users\\felipe.bastos\\Documents\\git\\Projeto-cti\\Projeto-cti.csproj",
+      "packagesPath": "C:\\Users\\felipe.bastos\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\felipe.bastos\\Documents\\git\\Projeto-cti\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\felip\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\felipe.bastos\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -61,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
