@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\felipe.bastos\\Documents\\git\\Projeto-cti\\Projeto-cti.csproj",
+  "FilePath": "c:\\Users\\felip\\Documents\\git\\Projeto-cti\\Projeto-cti.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -20521,43 +20521,38 @@
   "RootNamespace": "Projeto_cti",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\felipe.bastos\\Documents\\git\\Projeto-cti\\Views\\Shared\\Error.cshtml",
-      "TargetPath": "Views\\Shared\\Error.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\felipe.bastos\\Documents\\git\\Projeto-cti\\Views\\Home\\Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\felipe.bastos\\Documents\\git\\Projeto-cti\\Views\\User\\Index.cshtml",
-      "TargetPath": "Views\\User\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\felipe.bastos\\Documents\\git\\Projeto-cti\\Views\\_ViewStart.cshtml",
+      "FilePath": "c:\\Users\\felip\\Documents\\git\\Projeto-cti\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\felipe.bastos\\Documents\\git\\Projeto-cti\\Views\\_ViewImports.cshtml",
+      "FilePath": "c:\\Users\\felip\\Documents\\git\\Projeto-cti\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\felipe.bastos\\Documents\\git\\Projeto-cti\\Views\\Shared\\_Layout.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FilePath": "c:\\Users\\felip\\Documents\\git\\Projeto-cti\\Views\\Shared\\Error.cshtml",
+      "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\felipe.bastos\\Documents\\git\\Projeto-cti\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FilePath": "c:\\Users\\felip\\Documents\\git\\Projeto-cti\\Views\\Home\\Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\felip\\Documents\\git\\Projeto-cti\\Views\\User\\Index.cshtml",
+      "TargetPath": "Views\\User\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\felip\\Documents\\git\\Projeto-cti\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\felipe.bastos\\Documents\\git\\Projeto-cti\\Views\\Notifications\\Index.cshtml",
-      "TargetPath": "Views\\Notifications\\Index.cshtml",
+      "FilePath": "c:\\Users\\felip\\Documents\\git\\Projeto-cti\\Views\\Shared\\_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
     }
   ],

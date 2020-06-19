@@ -70,3 +70,4 @@ C:\Users\felipe.bastos\Documents\git\Projeto-cti\obj\Debug\netcoreapp3.1\Projeto
 C:\Users\felipe.bastos\Documents\git\Projeto-cti\obj\Debug\netcoreapp3.1\Projeto-cti.csproj.CopyComplete
 C:\Users\felipe.bastos\Documents\git\Projeto-cti\obj\Debug\netcoreapp3.1\Razor\Views\Notifications\Index.cshtml.g.cs
 C:\Users\felipe.bastos\Documents\git\Projeto-cti\obj\Debug\netcoreapp3.1\Razor\Views\User\Index.cshtml.g.cs
+C:\Users\felip\Documents\git\Projeto-cti\obj\Debug\netcoreapp3.1\Razor\Views\User\Index.cshtml.g.cs
