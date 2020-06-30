@@ -1,13 +1,15 @@
-﻿<head>
+﻿@model List<Projeto_cti.Models.Leituras>
+<head>
     <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src='https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js'></script>
+    <script src="~/Content/js/Charts.js"></script>
 </head>
 
 <div class="content">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6">
-                <div class="card ">
+                <div class="card border-light mb-3 " >
                     <div class="card-header ">
                         <h4 class="card-title">Temperatura da Estufa</h4>
                     </div>
@@ -17,121 +19,53 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="card ">
+                <div class="card border-light mb-3">
                     <div class="card-header ">
                         <h4 class="card-title">Úmidade da Estufa</h4>
                     </div>
                     <div class="card-body ">
-                        <div class="chart">
-                            <div id="umidade"></div>
-                        </div>
+                        <div id="umidade"></div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
-                    <table class="table table-bordered">
-                        <thead>
-                            <th>Hora</th>
-                            <th>Umidade</th>
-                            <th>Temperatura</th>  
-                        </thead>
-                        <tbody>
-                        
-                        </tbody>
-                    </table>
-                    <script id="tmplLinha" type="text/template">
-                        <tr>
-                            <td>{{Hora}}</td>
-                            <td>{{Umidade}}</td>
-                            <td>{{Temperatura}}</td>
-                        </tr>
-                    </script>
+            <div class="col-md-12" style="padding-top: 5px;background-color: white;">
+                <div class="card border-light mb-3">
+                    <div class="form">
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <th>Hora</th>
+                                <th>Umidade</th>
+                                <th>Temperatura</th>  
+                            </thead>
+                            @foreach (var item in Model)
+                            {
+                            <tr>
+                                <td>@item.Hora</td>
+                                <td>@item.Umidade</td>
+                                <td>@item.Temperatura</td>
+                            </tr>
+                            }
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
 <script>
+    Plotly.newPlot('temperatura', dataTemperatura, layoutTemperatura);
+    Plotly.newPlot('umidade', dataUmidade, layoutUmidade);
 
-var dataTemperatura = [
-    {
-        type: "indicator",
-        mode: "gauge+number",
-        value: 23,
-        number: {suffix: "°C"},
-        title: { text: "Temperatura", font: { size: 24 } },
-        gauge: {
-            axis: { visible: false, range: [0, 45], tickwidth: 1},
-            bar: { color: "#80FF00" },
-            borderwidth: 1,
-            steps: [
-                { range: [0, 18], color: "#FE2E2E" },
-                { range: [18, 19], color: "#F7FE2E" },
-                { range: [19, 24], color: "#2EFE2E" },
-                { range: [24, 25], color: "#F7FE2E" },
-                { range: [25, 45], color: "#FE2E2E" }
-            ],
-        }
-    }
-];
-
-var layoutTemperatura = {
-    width: 450,
-    height: 300,
-    margin: { t: 25, r: 25, l: 25, b: 25 },
-    font: { color: "black", family: "Arial" }
-};
-Plotly.newPlot('temperatura', dataTemperatura, layoutTemperatura);
-
-
-var dataUmidade = [
-    {
-        type: "indicator",
-        mode: "gauge+number",
-        value: 65,
-        number: {suffix: "%"},
-        title: { text: "Umidade", font: { size: 24 } },
-        gauge: {
-            axis: { visible: false, range: [0, 100], tickwidth: 1},
-            bar: { color: "#80FF00" },
-            borderwidth: 1,
-            steps: [
-                { range: [0, 58], color: "#FE2E2E" },
-                { range: [58, 60], color: "#F7FE2E" },
-                { range: [60, 70], color: "#2EFE2E" },
-                { range: [70, 72], color: "#F7FE2E" },
-                { range: [72, 100], color: "#FE2E2E" }
-            ],
-        }
-    }
-];
-
-var layoutUmidade = {
-    width: 450,
-    height: 300,
-    margin: { t: 25, r: 25, l: 25, b: 25 },
-    font: { color: "black", family: "Arial" }
-};
-Plotly.newPlot('umidade', dataUmidade, layoutUmidade);
-
-//Handlebars para inserir dados na tabela
-var tabela = document.querySelector(".table tbody");
-
-var tmplSource = document.getElementById("tmplLinha").innerHTML;
-var tmplHandle = Handlebars.compile(tmplSource);
-
-var dados = {};
-dados.Hora = 01;
-dados.Umidade = 05;
-dados.Temperatura = 23;
-
-    var linha = {};
-        linha.template = document.createElement("template");;  
-        linha.template.innerHTML = tmplHandle(dados)
-        linha.content = document.importNode(linha.template.content, true);
-
-        tabela.appendChild(linha.content);
+//Metodo AJAX para alimentar charts e table
+    //$.ajax({
+    //    method: "GET",
+    //    url: "test.js",
+    //    data: {
+    //        
+    //    },
+    //    dataType: "script"
+    //});
 
 </script>
