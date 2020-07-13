@@ -2,7 +2,6 @@
 <head>
     <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
     <script src='https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js'></script>
-    <script src="~/Content/js/Charts.js"></script>
 </head>
 
 <div class="content">
@@ -11,7 +10,7 @@
             <div class="col-md-6">
                 <div class="card border-light mb-3 " >
                     <div class="card-header ">
-                        <h4 class="card-title">Temperatura da Estufa</h4>
+                        <h4 class="card-title">Temperatura da Câmara</h4>
                     </div>
                     <div class="card-body ">
                         <div id="temperatura"></div>
@@ -21,7 +20,7 @@
             <div class="col-md-6">
                 <div class="card border-light mb-3">
                     <div class="card-header ">
-                        <h4 class="card-title">Úmidade da Estufa</h4>
+                        <h4 class="card-title">Úmidade da Câmara</h4>
                     </div>
                     <div class="card-body ">
                         <div id="umidade"></div>
@@ -30,7 +29,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12" style="padding-top: 5px;background-color: white;">
+            <div class="col-lg-12" style="padding-top: 5px;background-color: white;">
                 <div class="card border-light mb-3">
                     <div class="form">
                         <table class="table">
@@ -43,7 +42,7 @@
                             {
                             <tr>
                                 <td>@item.Hora</td>
-                                <td>@item.Umidade</td>
+                                <td>@item.Umidade%</td>
                                 <td>@item.Temperatura</td>
                             </tr>
                             }
@@ -55,17 +54,130 @@
     </div>
 </div>
 <script>
+        var temperaturaChart = 21
+        var umidadeChart = 70
+    function mudaCharts () {
+        function mudaUmidade (umidade){
+            let maxUmidade = umidade + 1;
+            let minUmidade = umidade - 1;
+            let randomUmidade = Math.floor(Math.random()*(maxUmidade-minUmidade+1)+minUmidade)
+            umidadeChart = randomUmidade
+
+            var dataUmidade = [
+                {
+                    type: "indicator",
+                    mode: "gauge+number",
+                    value: umidadeChart,
+                    number: {suffix: "%"},
+                    title: { text: "Umidade", font: { size: 24 } },
+                    gauge: {
+                        axis: { visible: false, range: [0, 100], tickwidth: 1},
+                        bar: { color: "#80FF00" },
+                        borderwidth: 1,
+                        steps: [
+                            { range: [0, 58], color: "#FE2E2E" },
+                            { range: [58, 60], color: "#F7FE2E" },
+                            { range: [60, 80], color: "#2EFE2E" },
+                            { range: [80, 82], color: "#F7FE2E" },
+                            { range: [82, 100], color: "#FE2E2E" }
+                        ],
+                    }
+                }
+            ];
+            return Plotly.newPlot('umidade', dataUmidade, layoutUmidade);
+        }
+
+        function mudaTemperatura(temperatura){
+            let maxTemperatura = temperatura + 1;
+            let minTemperatura = temperatura - 1;
+            let randomTemperatura = Math.floor(Math.random()*(maxTemperatura-minTemperatura+1)+minTemperatura)
+            temperaturaChart = randomTemperatura
+
+            dataTemperatura = [
+                {
+                    type: "indicator",
+                    mode: "gauge+number",
+                    value: temperaturaChart,
+                    number: {suffix: "°C"},
+                    title: { text: "Temperatura", font: { size: 24 } },
+                    gauge: {
+                        axis: { visible: false, range: [0, 45], tickwidth: 1},
+                        bar: { color: "#80FF00" },
+                        borderwidth: 1,
+                        steps: [
+                            { range: [0, 18], color: "#FE2E2E" },
+                            { range: [18, 19], color: "#F7FE2E" },
+                            { range: [19, 24], color: "#2EFE2E" },
+                            { range: [24, 25], color: "#F7FE2E" },
+                            { range: [25, 45], color: "#FE2E2E" }
+                        ],
+                    }
+                }
+            ];
+            return Plotly.newPlot('temperatura', dataTemperatura, layoutTemperatura);
+        }
+        return mudaUmidade(umidadeChart), mudaTemperatura(temperaturaChart)
+    }
+
+    var dataTemperatura = [
+        {
+            type: "indicator",
+            mode: "gauge+number",
+            value: temperaturaChart,
+            number: {suffix: "°C"},
+            title: { text: "Temperatura", font: { size: 24 } },
+            gauge: {
+                axis: { visible: false, range: [0, 45], tickwidth: 1},
+                bar: { color: "#80FF00" },
+                borderwidth: 1,
+                steps: [
+                    { range: [0, 18], color: "#FE2E2E" },
+                    { range: [18, 19], color: "#F7FE2E" },
+                    { range: [19, 24], color: "#2EFE2E" },
+                    { range: [24, 25], color: "#F7FE2E" },
+                    { range: [25, 45], color: "#FE2E2E" }
+                ],
+            }
+        }
+    ];
+
+    var layoutTemperatura = {
+        width: 450,
+        height: 300,
+        margin: { t: 25, r: 25, l: 25, b: 25 },
+        font: { color: "black", family: "Arial" }
+    };
+
+
+    var dataUmidade = [
+        {
+            type: "indicator",
+            mode: "gauge+number",
+            value: umidadeChart,
+            number: {suffix: "%"},
+            title: { text: "Umidade", font: { size: 24 } },
+            gauge: {
+                axis: { visible: false, range: [0, 100], tickwidth: 1},
+                bar: { color: "#80FF00" },
+                borderwidth: 1,
+                steps: [
+                    { range: [0, 58], color: "#FE2E2E" },
+                    { range: [58, 60], color: "#F7FE2E" },
+                    { range: [60, 80], color: "#2EFE2E" },
+                    { range: [80, 82], color: "#F7FE2E" },
+                    { range: [82, 100], color: "#FE2E2E" }
+                ],
+            }
+        }
+    ];
+
+    var layoutUmidade = {
+        width: 450,
+        height: 300,
+        margin: { t: 25, r: 25, l: 25, b: 25 },
+        font: { color: "black", family: "Arial" }
+    };
+
     Plotly.newPlot('temperatura', dataTemperatura, layoutTemperatura);
     Plotly.newPlot('umidade', dataUmidade, layoutUmidade);
-
-//Metodo AJAX para alimentar charts e table
-    //$.ajax({
-    //    method: "GET",
-    //    url: "test.js",
-    //    data: {
-    //        
-    //    },
-    //    dataType: "script"
-    //});
-
 </script>
